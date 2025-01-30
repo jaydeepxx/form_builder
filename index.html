@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Builder</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
@@ -11,17 +12,24 @@
     <header>
         <div class="header-left">
             <img class="form-icon" src="assets/form_icon.png" alt="form-icon">
-            <input type="text">
+            <input class="form-headline" type="text" value="Untitled form">
         </div>
-        <div class="header-right">
-            <span class="material-symbols-outlined">palette</span>            
-            <span class="material-symbols-outlined">undo</span>
-            <span class="material-symbols-outlined">redo</span>
-            <button class="publish-button">Publish</button>
+        <nav class="header-right">
+            <span class="material-symbols-outlined" id="palette" role="button" aria-label="Change theme">palette</span>            
+            <span class="material-symbols-outlined" id="undo" role="button">undo</span>
+            <span class="material-symbols-outlined" id="redo" role="button">redo</span>
+            <button class="publish-button" aria-label="Publish Form">Publish</button>
             <div class="user-profile">
+                <!-- <img src="" alt="User Profile"> -->
             </div>
-        </div>
-        
+        </nav>
     </header>
+    <div class="form-content">
+        <div class="form-header">
+            <input type="text" class="form-title-input" placeholder="Untitled Form">
+            <textarea name="form-description" class="form-description" placeholder="Form description"></textarea>
+        </div>
+    </div>
+   
 </body>
 </html>
