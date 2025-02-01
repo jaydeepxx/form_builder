@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Builder</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <title>Form Builder</title>
 </head>
 <body>
     <header>
@@ -29,7 +29,42 @@
             <input type="text" class="form-title-input" placeholder="Untitled Form">
             <textarea name="form-description" class="form-description" placeholder="Form description"></textarea>
         </div>
+        <div class="questions-card">
+            <div class="question-header">
+                <input type="text" class="question-input" placeholder="Question">
+                <label for="image-upload" class="material-symbols-outlined" id="upload-icon">image</label>
+                <input type="file" id="question-image-upload" class="file-input" hidden>
+                <select name="" class="question-types">
+                    <option value="short-answer">Short answer</option>
+                    <option value="paragraph">Paragraph</option>
+                    <option value="multiple-choice" selected="selected">Multiple choice</option>
+                    <option value="checkboxes">Checkboxes</option>
+                    <option value="dropdown">Dropdown</option>
+                    <option value="file-upload">File upload</option>
+                    <option value="linear-scale">Linear scale</option>
+                    <option value="multiple-choice-grid">Multiple choice grid</option>
+                    <option value="checkbox-grid">Checkbox Grid</option>
+                </select>
+            </div>
+            <div class="question-options">
+                <div class="option">
+                    <input type="radio" name="mcq" disabled>
+                    <input type="text" class="option-input" placeholder="Option 1">
+                </div>
+                <div class="option">
+                    <input type="radio" name="mcq" disabled>
+                    <input type="text" class="option-input" placeholder="Option 2">
+                </div>
+                <button class="add-option">Add option</button>
+            </div>
+            <div class="question-actions">
+                <span class="material-symbols-outlined" id="copy-icon">content_copy</span>
+                <span class="material-symbols-outlined" id="delete-icon">delete</span>
+                <span style="margin-right: 2px;">Required</span>
+                <input type="checkbox" id="required-toggle">
+            </div>
+        </div>
     </div>
-   
+   <script src="test.js"></script>
 </body>
 </html>

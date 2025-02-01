@@ -1,0 +1,24 @@
+header{
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 3px 0px rgba(0,0,0,0.3);
+    border-bottom: 0.5px solid rgb(218, 220, 224);;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header-left, .header-right{
+    display: flex;
+    align-items: center;
+}
+
+.header-right{
+    gap: 15px;
+    margin-right: 20px;
+}

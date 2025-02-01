@@ -1,0 +1,16 @@
+@import url("header.css");
+@import url("form.css");
+@import url("buttons.css");
+@import url("question.css");
+
+body{
+    background-color: #f0ebf8;
+    margin: 0;
+    padding-top: 80px;
+}
+
+@media only screen and (max-width: 768px) {
+    .form-header, .questions-card{
+        width: 80%;
+    }
+}
