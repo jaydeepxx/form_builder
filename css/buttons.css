@@ -25,3 +25,19 @@
     border-radius: 50%;
     background-color: rgba(202, 202, 202, 0.267);
 }
+
+.clear-button{
+    padding: 5px 10px;
+    /* margin-left: 10px; */
+    background-color: white;
+    color: black;
+    border-radius: .4em;
+    border: 1px solid grey;
+    cursor: pointer;
+    /* outline: #5f6368; */
+}
+
+.clear-button:hover{
+    background-color: #7047b5;
+    color: white;
+}

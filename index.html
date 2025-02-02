@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <title>Form Builder</title>
 </head>
+
 <body>
     <header>
         <div class="header-left">
@@ -15,9 +17,10 @@
             <input class="form-headline" type="text" value="Untitled form">
         </div>
         <nav class="header-right">
-            <span class="material-symbols-outlined" id="palette" role="button" aria-label="Change theme">palette</span>            
+            <span class="material-symbols-outlined" id="palette" role="button" aria-label="Change theme">palette</span>
             <span class="material-symbols-outlined" id="undo" role="button">undo</span>
             <span class="material-symbols-outlined" id="redo" role="button">redo</span>
+            <button class="clear-button" aria-label="Clear Form">Clear form</button>
             <button class="publish-button" aria-label="Publish Form">Publish</button>
             <div class="user-profile">
                 <!-- <img src="" alt="User Profile"> -->
@@ -27,7 +30,21 @@
     <div class="form-content">
         <div class="form-header">
             <input type="text" class="form-title-input" placeholder="Untitled Form">
+            <div class="toolbar">
+                <button onclick="formatText('bold')" class="material-symbols-outlined">format_bold</button>
+                <button onclick="formatText('italic')" class="material-symbols-outlined">format_italic</button>
+                <button onclick="formatText('underline')" class="material-symbols-outlined">format_underlined</button>
+                <!-- <button onclick="insertLink()" class="material-symbols-outlined">link</button> -->
+                <button onclick="removeFormat()" class="material-symbols-outlined">format_clear</button>
+            </div>
             <textarea name="form-description" class="form-description" placeholder="Form description"></textarea>
+            <div class="toolbar">
+                <button onclick="formatText('bold')" class="material-symbols-outlined">format_bold</button>
+                <button onclick="formatText('italic')" class="material-symbols-outlined">format_italic</button>
+                <button onclick="formatText('underline')" class="material-symbols-outlined">format_underlined</button>
+                <!-- <button onclick="insertLink()" class="material-symbols-outlined">link</button> -->
+                <button onclick="removeFormat()" class="material-symbols-outlined">format_clear</button>
+            </div>
         </div>
         <div class="questions-card">
             <div class="question-header">
@@ -60,11 +77,228 @@
             <div class="question-actions">
                 <span class="material-symbols-outlined" id="copy-icon">content_copy</span>
                 <span class="material-symbols-outlined" id="delete-icon">delete</span>
-                <span style="margin-right: 2px;">Required</span>
+                <span class="required-toggle">Required</span>
                 <input type="checkbox" id="required-toggle">
             </div>
         </div>
+        <div class="questions-card">
+            <div class="question-header">
+                <input type="text" class="question-input" placeholder="Question">
+                <label for="image-upload" class="material-symbols-outlined" id="upload-icon">image</label>
+                <input type="file" id="question-image-upload" class="file-input" hidden>
+                <select name="" class="question-types">
+                    <option value="short-answer">Short answer</option>
+                    <option value="paragraph">Paragraph</option>
+                    <option value="multiple-choice">Multiple choice</option>
+                    <option value="checkboxes" selected="selected">Checkboxes</option>
+                    <option value="dropdown">Dropdown</option>
+                    <option value="file-upload">File upload</option>
+                    <option value="linear-scale">Linear scale</option>
+                    <option value="multiple-choice-grid">Multiple choice grid</option>
+                    <option value="checkbox-grid">Checkbox Grid</option>
+                </select>
+            </div>
+            <div class="question-options">
+                <div class="option">
+                    <input type="checkbox" name="checkbox" disabled>
+                    <input type="text" class="option-input" placeholder="Option 1">
+                </div>
+                <div class="option">
+                    <input type="checkbox" name="checkbox" disabled>
+                    <input type="text" class="option-input" placeholder="Option 2">
+                </div>
+                <button class="add-option">Add option</button>
+            </div>
+            <div class="question-actions">
+                <span class="material-symbols-outlined" id="copy-icon">content_copy</span>
+                <span class="material-symbols-outlined" id="delete-icon">delete</span>
+                <span class="required-toggle">Required</span>
+                <input type="checkbox" id="required-toggle">
+            </div>
+        </div>
+        <div class="questions-card">
+            <div class="question-header">
+                <input type="text" class="question-input" placeholder="Question">
+                <label for="image-upload" class="material-symbols-outlined" id="upload-icon">image</label>
+                <input type="file" id="question-image-upload" class="file-input" hidden>
+                <select class="question-types">
+                    <option value="short-answer">Short answer</option>
+                    <option value="paragraph">Paragraph</option>
+                    <option value="multiple-choice">Multiple choice</option>
+                    <option value="checkboxes">Checkboxes</option>
+                    <option value="dropdown" selected="selected">Dropdown</option>
+                    <option value="file-upload">File upload</option>
+                    <option value="linear-scale">Linear scale</option>
+                    <option value="multiple-choice-grid">Multiple choice grid</option>
+                    <option value="checkbox-grid">Checkbox Grid</option>
+                </select>
+            </div>
+
+            <div class="question-options">
+                <div class="option">
+                    <span class="option-number">1.</span>
+                    <input type="text" class="option-input" placeholder="Option 1">
+                </div>
+                <div class="option">
+                    <span class="option-number">2.</span>
+                    <input type="text" class="option-input" placeholder="Option 2">
+                </div>
+                <button class="add-option">Add option</button>
+            </div>
+
+            <div class="question-actions">
+                <span class="material-symbols-outlined" id="copy-icon">content_copy</span>
+                <span class="material-symbols-outlined" id="delete-icon">delete</span>
+                <span class="required-toggle">Required</span>
+                <input type="checkbox" id="required-toggle">
+            </div>
+        </div>
+        <div class="questions-card">
+            <div class="question-header">
+                <input type="text" class="question-input" placeholder="Question">
+                <label for="image-upload" class="material-symbols-outlined" id="upload-icon">image</label>
+                <input type="file" id="question-image-upload" class="file-input" hidden>
+                <select class="question-types">
+                    <option value="short-answer">Short answer</option>
+                    <option value="paragraph">Paragraph</option>
+                    <option value="multiple-choice">Multiple choice</option>
+                    <option value="checkboxes">Checkboxes</option>
+                    <option value="dropdown">Dropdown</option>
+                    <option value="file-upload">File upload</option>
+                    <option value="linear-scale">Linear scale</option>
+                    <option value="multiple-choice-grid" selected="selected">Multiple choice grid</option>
+                    <option value="checkbox-grid">Checkbox Grid</option>
+                </select>
+            </div>
+
+            <div class="grid-container">
+                <div class="grid-rows">
+                    <label>Rows</label>
+                    <div class="option">
+                        <span class="option-number">1.</span>
+                        <input type="text" class="option-input" placeholder="Row 1">
+                    </div>
+                    <div class="option">
+                        <span class="option-number">2.</span>
+                        <input type="text" class="option-input" placeholder="Row 2">
+                    </div>
+                    <button class="add-option">Add row</button>
+                </div>
+
+                <div class="grid-columns">
+                    <label>Columns</label>
+                    <div class="option">
+                        <input type="radio" disabled>
+                        <input type="text" class="option-input" placeholder="Column 1">
+                    </div>
+                    <div class="option">
+                        <input type="radio" disabled>
+                        <input type="text" class="option-input" placeholder="Column 2">
+                    </div>
+                    <button class="add-option">Add column</button>
+                </div>
+            </div>
+
+            <div class="question-actions">
+                <span class="material-symbols-outlined" id="copy-icon">content_copy</span>
+                <span class="material-symbols-outlined" id="delete-icon">delete</span>
+                <span class="required-toggle">Required</span>
+                <input type="checkbox" id="required-toggle">
+            </div>
+        </div>
+        <div class="questions-card">
+            <div class="question-header">
+                <input type="text" class="question-input" placeholder="Question">
+                <label for="image-upload" class="material-symbols-outlined" id="upload-icon">image</label>
+                <input type="file" id="question-image-upload" class="file-input" hidden>
+                <select class="question-types">
+                    <option value="short-answer">Short answer</option>
+                    <option value="paragraph">Paragraph</option>
+                    <option value="multiple-choice">Multiple choice</option>
+                    <option value="checkboxes">Checkboxes</option>
+                    <option value="dropdown">Dropdown</option>
+                    <option value="file-upload">File upload</option>
+                    <option value="linear-scale">Linear scale</option>
+                    <option value="multiple-choice-grid">Multiple choice grid</option>
+                    <option value="checkbox-grid">Checkbox Grid</option>
+                    <option value="date" selected="selected">Date</option>
+                    <option value="time">Time</option>
+                    <option value="rating">Rating</option>
+                </select>
+            </div>
+            <div class="question-options">
+                <input type="date" class="date-input">
+            </div>
+            <div class="question-actions">
+                <span class="material-symbols-outlined" id="copy-icon">content_copy</span>
+                <span class="material-symbols-outlined" id="delete-icon">delete</span>
+                <span class="required-toggle">Required</span>
+                <input type="checkbox" id="required-toggle">
+            </div>
+        </div>
+        <div class="questions-card">
+            <div class="question-header">
+                <input type="text" class="question-input" placeholder="Question">
+                <label for="image-upload" class="material-symbols-outlined" id="upload-icon">image</label>
+                <input type="file" id="question-image-upload" class="file-input" hidden>
+                <select class="question-types">
+                    <option value="short-answer">Short answer</option>
+                    <option value="paragraph">Paragraph</option>
+                    <option value="multiple-choice">Multiple choice</option>
+                    <option value="checkboxes">Checkboxes</option>
+                    <option value="dropdown">Dropdown</option>
+                    <option value="file-upload">File upload</option>
+                    <option value="linear-scale">Linear scale</option>
+                    <option value="multiple-choice-grid">Multiple choice grid</option>
+                    <option value="checkbox-grid">Checkbox Grid</option>
+                    <option value="date">Date</option>
+                    <option value="time" selected="selected">Time</option>
+                    <option value="rating">Rating</option>
+                </select>
+            </div>
+            <div class="question-options">
+                <input type="time" class="time-input" >
+            </div>
+            <div class="question-actions">
+                <span class="material-symbols-outlined" id="copy-icon">content_copy</span>
+                <span class="material-symbols-outlined" id="delete-icon">delete</span>
+                <span class="required-toggle" style="margin-right: 2px;">Required</span>
+                <input type="checkbox" id="required-toggle">
+            </div>
+        </div>
+        <div class="questions-card">
+            <div class="question-header">
+                <input type="text" class="question-input" placeholder="Question">
+                <label for="image-upload" class="material-symbols-outlined" id="upload-icon">image</label>
+                <input type="file" id="question-image-upload" class="file-input" hidden>
+                <select class="question-types">
+                    <option value="short-answer">Short answer</option>
+                    <option value="paragraph">Paragraph</option>
+                    <option value="multiple-choice">Multiple choice</option>
+                    <option value="checkboxes">Checkboxes</option>
+                    <option value="dropdown">Dropdown</option>
+                    <option value="file-upload">File upload</option>
+                    <option value="linear-scale" selected="selected">Linear scale</option>
+                    <option value="multiple-choice-grid">Multiple choice grid</option>
+                    <option value="checkbox-grid">Checkbox Grid</option>
+                    <option value="date">Date</option>
+                    <option value="time">Time</option>
+                    <option value="rating">Rating</option>
+                </select>
+            </div>
+            <div class="question-options">
+                <input type="range" min="1" max="10" step="1" class="linear-scale-slider">
+            </div>
+            <div class="question-actions">
+                <span class="material-symbols-outlined" id="copy-icon">content_copy</span>
+                <span class="material-symbols-outlined" id="delete-icon">delete</span>
+                <span class="required-toggle">Required</span>
+                <input type="checkbox" id="required-toggle">
+            </div>
+        </div>
+
     </div>
-   <script src="test.js"></script>
+    <script src="test.js"></script>
 </body>
+
 </html>

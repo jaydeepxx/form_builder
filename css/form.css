@@ -35,7 +35,7 @@
     display: flex;
     flex-direction: column;
     width: 50%;
-    align-items: center;
+    align-items: start;
     margin: 50px auto 10px;
     padding: 20px;
     background: white;
@@ -74,4 +74,30 @@
 
 .form-description:focus{
     border-bottom: 2px solid #673ab7;
+}
+
+.toolbar {
+    display: flex;
+    gap: 10px;
+    padding: 5px;
+    /* background: #f0f0f0; */
+    border-radius: 5px;
+    /* width: fit-content; */
+    /* align-items: start; */
+}
+
+.toolbar button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #5f6368;
+}
+
+.rich-text {
+    min-height: 50px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 5px;
 }

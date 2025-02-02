@@ -7,6 +7,7 @@ body{
     background-color: #f0ebf8;
     margin: 0;
     padding-top: 80px;
+    font-family: Roboto;
 }
 
 @media only screen and (max-width: 768px) {

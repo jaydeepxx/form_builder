@@ -1,6 +1,7 @@
 .questions-card{
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
+    /* max-width: 600px;  */
     width: 50%;
     background: white;
     border-radius: 8px;
@@ -13,6 +14,7 @@
 .question-header{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
@@ -43,14 +45,56 @@
     background-color: rgba(202, 202, 202, 0.267);
 }
 
-.question-types{
-    padding: 10px;
+.question-types {
+    appearance: none; /* Removes default styles */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: white;
+    padding: 12px 16px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    width: 100%;
+    max-width: 250px; /* Adjust max width if needed */
+    position: relative;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
 }
 
+/* On hover */
+.question-types:hover {
+    border-color: #888;
+}
+
+/* On focus */
+.question-types:focus {
+    outline: none;
+    border-color: #673ab7;
+    box-shadow: 0 0 5px #673ab7;
+}
+
+/* Custom dropdown options */
+.question-types option {
+    padding: 10px;
+    font-size: 14px;
+    background: white;
+    color: #333;
+}
+
+/* Style the dropdown when opened */
+.question-types:active,
+.question-types:focus {
+    background-color: #f8f8f8;
+}
+
+
 .question-options{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -58,6 +102,7 @@
 }
 
 .option{
+    width: 100%;
     display: flex;
     align-items: start;
     gap: 8px;
@@ -135,4 +180,14 @@
 
 #required-toggle:checked::before{
     transform: translateX(20px);
+}
+
+.grid-container{
+    display: flex;
+}
+
+.required-toggle{
+    font-size: 0.9em;
+    margin-right: 2px;
+    font-family: Roboto;    
 }
