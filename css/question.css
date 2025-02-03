@@ -22,11 +22,14 @@
     margin-bottom: 5px;
     flex: 1;
     font-size: 20px;
+    font-family: docs-Roboto,"Open Sans";
     border: none;
     outline: none;
     border-bottom: 2px solid transparent;
     transition: border-bottom 0.2s ease-in-out;
     height: 40px;
+    font-size: 12pt;
+    font-weight: 400;
 }
 
 .question-input:focus{
@@ -46,7 +49,7 @@
 }
 
 .question-types {
-    appearance: none; /* Removes default styles */
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     background-color: white;
@@ -58,7 +61,7 @@
     font-weight: 500;
     color: #333;
     width: 100%;
-    max-width: 250px; /* Adjust max width if needed */
+    max-width: 250px; 
     position: relative;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
@@ -66,19 +69,19 @@
     background-size: 16px;
 }
 
-/* On hover */
+
 .question-types:hover {
     border-color: #888;
 }
 
-/* On focus */
+
 .question-types:focus {
     outline: none;
     border-color: #673ab7;
     box-shadow: 0 0 5px #673ab7;
 }
 
-/* Custom dropdown options */
+
 .question-types option {
     padding: 10px;
     font-size: 14px;
@@ -86,14 +89,41 @@
     color: #333;
 }
 
-/* Style the dropdown when opened */
+
 .question-types:active,
 .question-types:focus {
     background-color: #f8f8f8;
 }
 
 
+
+  .dropdown-options ul li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+  }
+
+  .dropdown-options ul li:last-child {
+    border-bottom: none;
+  }
+
+  .dropdown-options ul li:hover {
+    background-color: #f5f5f5;
+  }
+
+  .new-badge {
+    background-color: #800080;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 12px;
+    padding: 2px 8px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+
 .question-options{
+    font-family: docs-Roboto,"Open Sans";
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -109,8 +139,17 @@
 }
 
 .add-option{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    gap: 8px;
     font-size: 15px;
-    /* width: 20%; */
+    cursor: pointer;
+}
+
+.add-option-button{
+    display: none;
+
 }
 
 .option-input{
@@ -128,9 +167,10 @@
 
 .add-option{
     background: none;
+    outline: none;
     border: none;
-    color: #673ab7;
-    cursor: pointer;
+    color: grey;
+    font-size: 14px;
 }
 
 .question-actions{
@@ -184,10 +224,42 @@
 
 .grid-container{
     display: flex;
+    padding: 5px;
 }
 
 .required-toggle{
     font-size: 0.9em;
     margin-right: 2px;
     font-family: Roboto;    
+}
+
+#image-upload{
+    display: none;
+}
+
+.row-heading, .column-heading{
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: .2px;
+    line-height: 20px;
+    color: rgb(32, 33, 36);
+    font-weight: 500;
+}
+
+.grid-rows, .grid-columns{
+    flex-direction: column;
+    display: flex;
+    gap: 14px;
+    flex: 0.5;
+}
+
+.date-input{
+    outline: none;
+    border: none;
+}
+
+.time-input{
+    outline: none;
+    border: none;
 }

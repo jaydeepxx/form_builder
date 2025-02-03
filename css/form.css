@@ -12,8 +12,9 @@
 }
 
 .form-headline{
-    font-size: 20px;
-    font-weight: 300;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Open Sans",Roboto,Arial,sans-serif;
     /* appearance: none; */
 	border: none;
 	outline: none;
@@ -23,7 +24,7 @@
     transition: border-bottom 0.2s ease-in-out;
     padding: 5px;
 	background: transparent;
-    color: #202124; 
+    color: rgb(32,33,36); 
 }
 
 .form-headline:focus{
@@ -46,15 +47,16 @@
 }
 
 .form-title-input{
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 24pt;
+    font-weight: 400;
+    font-family: docs-Roboto,"Open Sans";
     width: 100%;
     border: none;
     border-bottom: 2px solid transparent;
     transition: border-bottom 0.2s ease-in-out;
     outline: none;
     background: transparent;
-    color: #202124;
+    color: rgb(32, 33, 36);
 }
 
 .form-title-input:focus{
@@ -62,12 +64,14 @@
 }
 
 .form-description{
-    font-size: 16px;
+    font-size: 11pt;
+    font-weight: 400;
+    font-family: docs-Roboto,"Open Sans";
     width: 100% !important;
     border: none;
     outline: none;
     resize: none;
-    height: 40px !important;
+    height: 20px !important;
     border-bottom: 2px solid transparent;
     transition: border-bottom 0.2s ease-in-out;
 }
