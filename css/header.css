@@ -2,6 +2,7 @@ header{
     background-color: white;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 0 3px 0px rgba(0,0,0,0.3);
@@ -26,6 +27,7 @@ header{
 /* Buttons  */
 
 .publish-button{
+    font-family: docs-Roboto,"Open Sans";
     padding: 10px 24px;
     /* margin-left: 10px; */
     background-color: #673ab7;
@@ -52,12 +54,13 @@ header{
 }
 
 .clear-button{
+    font-family: docs-Roboto,"Open Sans";
     padding: 5px 10px;
     /* margin-left: 10px; */
     background-color: white;
     color: black;
     border-radius: .4em;
-    border: 1px solid grey;
+    border: 1px solid rgba(128, 128, 128, 0.395);
     cursor: pointer;
     /* outline: #5f6368; */
 }
@@ -70,4 +73,10 @@ header{
 
 .form-headline{
     font-size: 18px;
+}
+
+.form-icon{
+    max-width: 35px !important;
+    cursor: pointer;
+    /* padding: 5px; */
 }
