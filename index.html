@@ -416,7 +416,11 @@
                 </div>
             </div>
             <div class="question-options">
-                <input type="date" class="date-input" />
+                <label for="date-input" class="input-date">
+                    <label for="date-input">Month, day, year</label>
+                    <span class="material-symbols-outlined">event</span>
+                </label>
+                <input type="date" id="date-input" disabled hidden />
             </div>
             <div class="question-actions">
                 <span class="material-symbols-outlined" id="copy-icon">content_copy</span>
@@ -470,8 +474,11 @@
                 </div>
             </div>
             <div class="question-options">
-                <label for=""></label>
-                <input type="time" class="time-input" />
+                <label for="time-input" class="input-time">
+                    <label for="time-input">Time</label>
+                    <span class="material-symbols-outlined">access_time</span>
+                </label>
+                <input type="time" id="time-input" disabled hidden />
             </div>
             <div class="question-actions">
                 <span class="material-symbols-outlined" id="copy-icon">content_copy</span>
@@ -551,7 +558,103 @@
                 <input type="checkbox" id="required-toggle" />
             </div>
         </div>
-
+        <div class="questions-card">
+            <div class="question-header">
+                <input type="text" class="question-input" placeholder="Question" />
+                <label for="image-upload" class="material-symbols-outlined" id="upload-icon">image</label>
+                <input type="file" id="image-upload" class="file-input" hidden />
+                <div class="custom-select">
+                    <div class="select-btn">
+                        <span id="selected-option">Select Option</span>
+                        <i class="material-symbols-outlined">arrow_drop_down</i>
+                    </div>
+                    <div class="options-type">
+                        <div class="option-type" data-value="short-answer">
+                            <i class="material-symbols-outlined">short_text</i> Short answer
+                        </div>
+                        <div class="option-type" data-value="paragraph">
+                            <i class="material-symbols-outlined">subject</i> Paragraph
+                        </div>
+                        <div class="option-type" data-value="multiple-choice">
+                            <i class="material-symbols-outlined">radio_button_checked</i> Multiple choice
+                        </div>
+                        <div class="option-type" data-value="checkboxes">
+                            <i class="material-symbols-outlined">check_box</i> Checkboxes
+                        </div>
+                        <div class="option-type" data-value="dropdown">
+                            <i class="material-symbols-outlined">arrow_drop_down_circle</i> Dropdown
+                        </div>
+                        <div class="option-type" data-value="file-upload">
+                            <i class="material-symbols-outlined">apps</i> Multiple choice grid
+                        </div>
+                        <div class="option-type" data-value="linear-scale">
+                            <i class="material-symbols-outlined">linear_scale</i> Linear scale
+                        </div>
+                        <div class="option-type" data-value="date">
+                            <i class="material-symbols-outlined">event</i> Date
+                        </div>
+                        <div class="option-type" data-value="time">
+                            <i class="material-symbols-outlined">access_time</i> Time
+                        </div>
+                        <div class="option-type selected" data-value="rating">
+                            <i class="material-symbols-outlined">star</i> Rating
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="linear-scale-question-option">
+                <select class="linear-scale-min">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <select class="linear-scale-max">
+                    
+                </select>
+            </div>
+            <div class="rating-layout">
+                <div class="rating-layout_">
+                   
+                </div>
+                <div class="rating-layout_">
+                    <label for="">1</label>
+                    <label for="star-radio" class="material-symbols-outlined" id="star-icon">star</label>
+                    <input id="star-radio" type="radio" hidden disabled>
+                </div>
+                <div class="rating-layout_">
+                    <label for="">2</label>
+                    <label for="star-radio" class="material-symbols-outlined" id="star-icon">star</label>
+                    <input id="star-radio" type="radio" hidden disabled>
+                </div>
+                <div class="rating-layout_">
+                    <label for="">3</label>
+                    <label for="star-radio" class="material-symbols-outlined" id="star-icon">star</label>
+                    <input id="star-radio" type="radio" hidden disabled>
+                </div>
+                <div class="rating-layout_">
+                    <label for="">4</label>
+                    <label for="star-radio" class="material-symbols-outlined" id="star-icon">star</label>
+                    <input id="star-radio" type="radio" hidden disabled>
+                </div>
+                <div class="rating-layout_">
+                    <label for="">5</label>
+                    <label for="star-radio" class="material-symbols-outlined" id="star-icon">star</label>
+                    <input id="star-radio" type="radio" hidden disabled>
+                </div>
+                <div class="rating-layout_">
+                   
+                </div>
+            </div>
+            <div class="question-actions">
+                <span class="material-symbols-outlined" id="copy-icon">content_copy</span>
+                <span class="material-symbols-outlined" id="delete-icon">delete</span>
+                <div class="hor-line"></div>
+                <span class="required-toggle">Required</span>
+                <input type="checkbox" id="required-toggle" />
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

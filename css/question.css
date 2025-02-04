@@ -137,7 +137,7 @@
 }
 
 #copy-icon,
-#delete-icon {
+#delete-icon,#star-icon {
     cursor: pointer;
     padding: 10px;
     color: #5f6368;
@@ -338,3 +338,42 @@
     border-radius: 50%;
     background-color: rgba(202, 202, 202, 0.267);
 }
+
+.input-date, .input-time{
+    display: flex;
+    align-items: center;
+    color: #70757a;
+    font-family: docs-Roboto, "Open Sans";
+    border-bottom:2px solid #70757a55;
+}
+
+.input-date label, .input-time label{
+    margin-right: 5px;
+}
+
+.rating-layout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.rating-layout_{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    /* justify-content: center; */
+    padding: 10px;
+}
+
+/* .rating-layout_ label{
+    font-family: docs-Roboto, "Open Sans";
+} */
+
+#star-icon{
+    outline: none;
+    font-size: 34px !important;
+}
+
