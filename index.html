@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <title>Form Builder</title>
 </head>
@@ -35,35 +37,33 @@
     </header>
     <div class="form-content">
         <div class="form-header">
-            <input type="text" class="form-title-input" value="Untitled Form" />
+            <input type="text" class="form-title-input" value="Untitled form" />
             <div class="toolbar">
-                <button onclick="formatText('bold')" class="material-symbols-outlined">
+                <button class="material-symbols-outlined">
                     format_bold
                 </button>
-                <button onclick="formatText('italic')" class="material-symbols-outlined">
+                <button class="material-symbols-outlined">
                     format_italic
                 </button>
-                <button onclick="formatText('underline')" class="material-symbols-outlined">
+                <button class="material-symbols-outlined">
                     format_underlined
                 </button>
-                <!-- <button onclick="insertLink()" class="material-symbols-outlined">link</button> -->
-                <button onclick="removeFormat()" class="material-symbols-outlined">
+                <button class="material-symbols-outlined">
                     format_clear
                 </button>
             </div>
             <textarea name="form-description" class="form-description" placeholder="Form description"></textarea>
             <div class="toolbar">
-                <button onclick="formatText('bold')" class="material-symbols-outlined">
+                <button class="material-symbols-outlined">
                     format_bold
                 </button>
-                <button onclick="formatText('italic')" class="material-symbols-outlined">
+                <button class="material-symbols-outlined">
                     format_italic
                 </button>
-                <button onclick="formatText('underline')" class="material-symbols-outlined">
+                <button class="material-symbols-outlined">
                     format_underlined
                 </button>
-                <!-- <button onclick="insertLink()" class="material-symbols-outlined">link</button> -->
-                <button onclick="removeFormat()" class="material-symbols-outlined">
+                <button class="material-symbols-outlined">
                     format_clear
                 </button>
             </div>
@@ -116,10 +116,12 @@
                 <div class="option">
                     <input type="radio" name="mcq" disabled />
                     <input type="text" class="option-input" value="Option 1" />
+                    <span class="material-symbols-outlined" id="close" role="button">close</span>
                 </div>
                 <div class="option">
                     <input type="radio" name="mcq" disabled />
                     <input type="text" class="option-input" value="Option 2" />
+                    <span class="material-symbols-outlined" id="close" role="button">close</span>
                 </div>
                 <div class="option">
                     <input type="radio" name="mcq" disabled />
@@ -131,6 +133,7 @@
             <div class="question-actions">
                 <span class="material-symbols-outlined" id="copy-icon">content_copy</span>
                 <span class="material-symbols-outlined" id="delete-icon">delete</span>
+                <div class="hor-line"></div>
                 <span class="required-toggle">Required</span>
                 <input type="checkbox" id="required-toggle" />
             </div>
@@ -183,10 +186,12 @@
                 <div class="option">
                     <input type="checkbox" name="checkbox" disabled />
                     <input type="text" class="option-input" value="Option 1" />
+                    <span class="material-symbols-outlined" id="close" role="button">close</span>
                 </div>
                 <div class="option">
                     <input type="checkbox" name="checkbox" disabled />
                     <input type="text" class="option-input" value="Option 2" />
+                    <span class="material-symbols-outlined" id="close" role="button">close</span>
                 </div>
                 <div class="option">
                     <input type="checkbox" name="mcq" disabled />
@@ -197,6 +202,7 @@
             <div class="question-actions">
                 <span class="material-symbols-outlined" id="copy-icon">content_copy</span>
                 <span class="material-symbols-outlined" id="delete-icon">delete</span>
+                <div class="hor-line"></div>
                 <span class="required-toggle">Required</span>
                 <input type="checkbox" id="required-toggle" />
             </div>
@@ -250,10 +256,12 @@
                 <div class="option">
                     <span class="option-number">1.</span>
                     <input type="text" class="option-input" value="Option 1" />
+                    <span class="material-symbols-outlined" id="close" role="button">close</span>
                 </div>
                 <div class="option">
                     <span class="option-number">2.</span>
                     <input type="text" class="option-input" value="Option 2" />
+                    <span class="material-symbols-outlined" id="close" role="button">close</span>
                 </div>
                 <div class="option">
                     <span class="option-number">3.</span>
@@ -265,6 +273,7 @@
             <div class="question-actions">
                 <span class="material-symbols-outlined" id="copy-icon">content_copy</span>
                 <span class="material-symbols-outlined" id="delete-icon">delete</span>
+                <div class="hor-line"></div>
                 <span class="required-toggle">Required</span>
                 <input type="checkbox" id="required-toggle" />
             </div>
@@ -320,14 +329,16 @@
                     <div class="option">
                         <span class="option-number">1.</span>
                         <input type="text" class="option-input" value="Row 1" />
+                        <span class="material-symbols-outlined" id="close" role="button">close</span>
                     </div>
                     <div class="option">
                         <span class="option-number">2.</span>
                         <input type="text" class="option-input" value="Row 2" />
+                        <span class="material-symbols-outlined" id="close" role="button">close</span>
                     </div>
                     <div class="option">
                         <span class="option-number">3.</span>
-                        <label for="add-option" class="add-option">Add option</label>
+                        <label for="add-option" class="add-option">Add row</label>
                         <button id="add-option" class="add-option-button">Add option</button>
                     </div>
                 </div>
@@ -337,14 +348,16 @@
                     <div class="option">
                         <input type="radio" disabled />
                         <input type="text" class="option-input" value="Column 1" />
+                        <span class="material-symbols-outlined" id="close" role="button">close</span>
                     </div>
                     <div class="option">
                         <input type="radio" disabled />
                         <input type="text" class="option-input" value="Column 2" />
+                        <span class="material-symbols-outlined" id="close" role="button">close</span>
                     </div>
                     <div class="option">
                         <input type="radio" name="mcq" disabled />
-                        <label for="add-option" class="add-option">Add option</label>
+                        <label for="add-option" class="add-option">Add column</label>
                         <button id="add-option" class="add-option-button">Add option</button>
                     </div>
                 </div>
@@ -353,6 +366,7 @@
             <div class="question-actions">
                 <span class="material-symbols-outlined" id="copy-icon">content_copy</span>
                 <span class="material-symbols-outlined" id="delete-icon">delete</span>
+                <div class="hor-line"></div>
                 <span class="required-toggle">Required</span>
                 <input type="checkbox" id="required-toggle" />
             </div>
@@ -456,11 +470,13 @@
                 </div>
             </div>
             <div class="question-options">
+                <label for=""></label>
                 <input type="time" class="time-input" />
             </div>
             <div class="question-actions">
                 <span class="material-symbols-outlined" id="copy-icon">content_copy</span>
                 <span class="material-symbols-outlined" id="delete-icon">delete</span>
+                <div class="hor-line"></div>
                 <span class="required-toggle" style="margin-right: 2px">Required</span>
                 <input type="checkbox" id="required-toggle" />
             </div>
@@ -510,13 +526,11 @@
                 </div>
             </div>
             <div class="linear-scale-question-option">
-                <!-- <label>Min:</label> -->
                 <select class="linear-scale-min">
                     <option value="0">0</option>
                     <option value="1">1</option>
                 </select>
                 <label for="">to</label>
-                <!-- <label>Max:</label> -->
                 <select class="linear-scale-max">
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -532,13 +546,14 @@
             <div class="question-actions">
                 <span class="material-symbols-outlined" id="copy-icon">content_copy</span>
                 <span class="material-symbols-outlined" id="delete-icon">delete</span>
+                <div class="hor-line"></div>
                 <span class="required-toggle">Required</span>
                 <input type="checkbox" id="required-toggle" />
             </div>
         </div>
-        
+
     </div>
-    <script src="test.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

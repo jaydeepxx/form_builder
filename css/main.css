@@ -14,3 +14,19 @@ body{
         width: 80%;
     }
 }
+
+@media only screen and (max-width: 593px) {
+    .form-header{
+        margin: 80px auto 10px;
+    }
+}
+
+input[type=radio]{
+    width: 25px;
+    height: 20px;
+}
+
+input[type=checkbox]{
+    width: 25px;
+    height: 20px;
+}
