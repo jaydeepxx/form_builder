@@ -14,6 +14,13 @@ document.querySelectorAll(".custom-select").forEach(select => {
         e.stopPropagation(); 
         // closeAllDropdowns();
         // console.log("selectbtn");
+        if(options.style.display === "flex")
+        {
+            // options.style.display = "none";
+            closeAllDropdowns();
+            return;
+        }
+        closeAllDropdowns();
         options.style.display = options.style.display === "flex" ? "none" : "flex";
     });
 
