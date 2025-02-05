@@ -1,0 +1,100 @@
+
+.form-icon{
+    width: 15%;
+    max-width: 50px;
+    padding: 10px;
+}
+
+.form-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-headline{
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Open Sans",Roboto,Arial,sans-serif;
+    /* appearance: none; */
+	border: none;
+	outline: none;
+    width: 100%;
+    max-width: 150px;
+	border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s ease-in-out;
+    padding: 5px;
+	background: transparent;
+    color: rgb(32,33,36); 
+}
+
+.form-headline:focus{
+    border-bottom: 2px solid #202124;
+}
+
+.form-header{
+    /* background-color: #f0ebf8;; */
+    display: flex;
+    flex-direction: column;
+    max-width: 770px;
+    width: 80%;
+    align-items: start;
+    margin: 50px auto 10px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    border-top: 10px solid #673ab7;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    gap: 10px;
+}
+
+.form-title-input{
+    font-size: 24pt;
+    font-weight: 400;
+    font-family: docs-Roboto,"Open Sans";
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s ease-in-out;
+    outline: none;
+    background: transparent;
+    color: rgb(32, 33, 36);
+}
+
+.form-title-input:focus{
+    border-bottom: 2px solid #673ab7;
+}
+
+.form-description{
+    font-size: 11pt;
+    font-weight: 400;
+    font-family: docs-Roboto,"Open Sans";
+    width: 100% !important;
+    border: none;
+    outline: none;
+    resize: none;
+    height: 20px !important;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s ease-in-out;
+}
+
+.form-description:focus{
+    border-bottom: 2px solid #673ab7;
+}
+
+.toolbar {
+    display: flex;
+    gap: 10px;
+    padding: 5px;
+    /* background: #f0f0f0; */
+    border-radius: 5px;
+    /* width: fit-content; */
+    /* align-items: start; */
+}
+
+.toolbar button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #5f6368;
+}
