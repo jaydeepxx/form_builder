@@ -327,6 +327,10 @@
     color: #5f6368;
 }
 
+.add-option-btn{
+    height: 34px;
+}
+
 #close {
     /* background-color: #5f6368; */
     cursor: pointer;
