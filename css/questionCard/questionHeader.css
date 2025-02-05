@@ -1,0 +1,39 @@
+.question-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.question-input {
+    margin-bottom: 5px;
+    flex: 1;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s ease-in-out;
+    height: 45px;
+}
+
+.question-input:focus {
+    border-bottom: 2px solid #673ab7;
+    background-color: rgba(202, 202, 202, 0.267);
+}
+
+.upload-icon {
+    padding: 10px;
+    color: #5f6368;
+    cursor: pointer;
+}
+
+.upload-icon:hover {
+    border-radius: 50%;
+    background-color: rgba(202, 202, 202, 0.267);
+}
+
+.image-upload {
+    display: none;
+}
+
+
+
