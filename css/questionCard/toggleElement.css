@@ -1,0 +1,33 @@
+.required-toggle {
+    appearance: none;
+    width: 32px;
+    height: 12px;
+    background: grey;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.required-toggle:before {
+    content: " ";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: white;
+    margin: -4px;
+    border-radius: 50%;
+}
+
+.required-toggle:checked {
+    background-color: #673ab7;
+}
+
+.required-toggle,
+.required-toggle:before {
+    box-shadow: 0 0 2px #444;
+    transition: 0.5s;
+}
+
+.required-toggle:checked::before {
+    transform: translateX(20px);
+}

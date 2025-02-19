@@ -1,0 +1,45 @@
+@import url("./questionHeader.css");
+@import url("./questionOption.css");
+@import url("./toggleElement.css");
+@import url("./selectDropbox.css");
+
+.questions-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    border-radius: 8px;
+    padding: 16px 16px 5px 16px;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    gap: 10px;
+}
+
+.question-actions {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin: 0px 2px;
+    height: 55px;
+    border-top: 1px solid rgb(218, 220, 224);
+}
+
+.hor-line {
+    border-left: 1px solid rgb(218, 220, 224);
+    height: 32px;
+    margin: 0 16px;
+    width: 0;
+}
+
+.required {
+    padding: 5px;
+    letter-spacing: 0.2px;
+    font-size: 0.9em;
+    margin-right: 2px;
+    font-family: Roboto;
+}
+
+.required-option{
+    display: flex;
+    align-items: center;
+}
