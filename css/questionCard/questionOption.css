@@ -17,11 +17,6 @@
     gap: 8px;
 }
 
-.option-checkbox {
-    width: 25px;
-    height: 20px;
-}
-
 .option-input {
     width: 100%;
     border: none;
@@ -76,6 +71,7 @@
     display: flex;
     gap: 14px;
     flex: 0.5;
+    padding: 0px;
 }
 
 /* Additional CSS For Date & Time type question card*/
@@ -93,7 +89,7 @@
 
 /* Additional CSS for Linear scale & Rating type question card */
 
-.linear-scale-question-option {
+.scale-question-option {
     display: flex;
     flex-direction: row;
     align-items: center;
