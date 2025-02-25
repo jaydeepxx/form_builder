@@ -13,6 +13,7 @@ body {
     height: 100vh;
     margin: 0px;
     background-color: #f0ebf8;
+    
 }
 
 .icon-button{
@@ -37,6 +38,11 @@ body {
 }
 
 input[type=radio] {
+    width: 25px;
+    height: 20px;
+}
+
+input[type=checkbox] {
     width: 25px;
     height: 20px;
 }
