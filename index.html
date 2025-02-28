@@ -17,18 +17,23 @@
             <input class="form-headline" type="text" value="Untitled form" />
         </div>
         <ul class="form-header-right">
-            <li>
+            <li class="theme-switcher">
                 <button class="material-symbols-outlined icon-button" id="theme-icon-button" aria-label="Change theme">
                     palette
                 </button>
+                <div class="theme-toggle">
+                    <div id="dark-theme"></div>
+                    <div id="purple-theme"></div>
+                    <div id="red-theme"></div>
+                </div>
             </li>
             <li>
-                <button class="material-symbols-outlined icon-button" id="undo-icon-button" aria-label="Change theme">
+                <button class="material-symbols-outlined icon-button" id="undo-button" aria-label="Change theme">
                     undo
                 </button>
             </li>
             <li>
-                <button class="material-symbols-outlined icon-button" id="redo-icon-button" aria-label="Change theme">
+                <button class="material-symbols-outlined icon-button" id="redo-button" aria-label="Change theme">
                     redo
                 </button>
             </li>
@@ -77,21 +82,47 @@
             </section>
             <!-- Multiple choice question card -->
             <div role="group" aria-label="mcq-question" class="questions-card">
+                <div class="drag-handle" aria-label="Drag to reorder"><span
+                        class="material-symbols-outlined drag-icon">drag_indicator</span></div>
                 <div class="question-header">
                     <input type="text" class="question-input label-large" placeholder="Question"
                         aria-label="Question Heading" />
                     <label class="material-symbols-outlined upload-icon">image
-                        <input type="file" class="image-upload" class="file-input" />
+                        <input type="file" class="image-upload" />
                     </label>
 
                     <div class="custom-select">
-                        <div class="select-button" aria-label="Select Question Type">
-                            <div class="selected-option">
-                                <span class="material-symbols-outlined">radio_button_checked</span> Multiple choice
-                            </div>
-                            <span class="material-symbols-outlined">arrow_drop_down</span>
+                        <div class="select-button">
+                            <span class="selected-option">Select Option</span>
+                            <i class="material-symbols-outlined">arrow_drop_down</i>
                         </div>
-                        <div class="options-type"></div>
+                        <ul class="options-type">
+                            <li class="option-type selected" data-value="multipleChoice">
+                                <i class="material-symbols-outlined">radio_button_checked</i> <span>Multiple
+                                    choice</span>
+                            </li>
+                            <li class="option-type " data-value="checkBoxes">
+                                <i class="material-symbols-outlined">check_box</i> <span>Checkboxes</span>
+                            </li>
+                            <li class="option-type" data-value="dropDown">
+                                <i class="material-symbols-outlined">arrow_drop_down_circle</i> <span>Dropdown</span>
+                            </li>
+                            <li class="option-type" data-value="multipleChoiceGrid">
+                                <i class="material-symbols-outlined">apps</i> <span>Multiple choice grid</span>
+                            </li>
+                            <li class="option-type" data-value="linearScale">
+                                <i class="material-symbols-outlined">linear_scale</i> <span>Linear scale</span>
+                            </li>
+                            <li class="option-type" data-value="date">
+                                <i class="material-symbols-outlined">event</i> <span>Date</span>
+                            </li>
+                            <li class="option-type" data-value="time">
+                                <i class="material-symbols-outlined">access_time</i> <span>Time</span>
+                            </li>
+                            <li class="option-type" data-value="rating">
+                                <i class="material-symbols-outlined">star</i> <span>Rating</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <ul class="question-options">
@@ -99,23 +130,18 @@
                         <input type="radio" name="mcq" disabled />
                         <input type="text" class="option-input label-medium" value="Option 1" />
                         <button type="button" class="material-symbols-outlined icon-button"
-                            aria-label="Remove Option">close</button>
-                    </li>
-                    <li class="option">
-                        <input type="radio" name="mcq" disabled />
-                        <input type="text" class="option-input label-medium" value="Option 2" />
-                        <button type="button" class="material-symbols-outlined icon-button"
-                            aria-label="Remove Option">close</button>
+                            aria-label="remove-option">close</button>
                     </li>
                     <li class="option add-option-button">
                         <input type="radio" name="mcq" disabled />
                         <button type="button" class="add-option-button label-small">Add option</button>
                     </li>
-                    <!-- <button class="add-option">Add option</button> -->
                 </ul>
                 <div class="question-actions">
-                    <button type="button" class="material-symbols-outlined icon-button">content_copy</button>
-                    <button type="button" class="material-symbols-outlined icon-button">delete</button>
+                    <button type="button" class="material-symbols-outlined icon-button"
+                        aria-label="copy-question-button">content_copy</button>
+                    <button type="button" class="material-symbols-outlined icon-button"
+                        aria-label="delete-question-button">delete</button>
                     <div class="hor-line"></div>
                     <label aria-label="required-option" class="required-option">
                         <span class="required">Required</span>
@@ -123,367 +149,12 @@
                     </label>
                 </div>
             </div>
-            <!-- checkbox question card -->
-            <div role="group" aria-label="checkbox-question" class="questions-card">
-                <div class="question-header">
-                    <input type="text" class="question-input label-large" placeholder="Question" />
-                    <label class="material-symbols-outlined upload-icon">image
-                        <input type="file" class="image-upload" class="file-input" hidden />
-                    </label>
-
-                    <div class="custom-select">
-                        <div class="select-button">
-                            <div class="selected-option">
-                                <span class="material-symbols-outlined">check_box</span> Checkboxes
-                            </div>
-                            <span class="material-symbols-outlined">arrow_drop_down</span>
-                        </div>
-                        <div class="options-type"></div>
-                    </div>
-                </div>
-                <ul class="question-options">
-                    <li class="option">
-                        <input class="option-checkbox" type="checkbox" name="checkbox" disabled />
-                        <input type="text" class="option-input label-medium" value="Option 1" />
-                        <button type="button" class="material-symbols-outlined icon-button"
-                            aria-label="Remove Option">close</button>
-                    </li>
-                    <li class="option">
-                        <input class="option-checkbox" type="checkbox" name="checkbox" disabled />
-                        <input type="text" class="option-input label-medium" value="Option 2" />
-                        <button type="button" class="material-symbols-outlined icon-button"
-                            aria-label="Remove Option">close</button>
-                    </li>
-                    <li class="option add-option-button">
-                        <input class="option-checkbox" type="checkbox" name="mcq" disabled />
-                        <button type="button" class="add-option-button label-small">Add option</button>
-                    </li>
-                </ul>
-                <div class="question-actions">
-                    <button type="button" class="material-symbols-outlined icon-button">content_copy</button>
-                    <button type="button" class="material-symbols-outlined icon-button">delete</button>
-                    <div class="hor-line"></div>
-                    <label aria-label="required-option" class="required-option">
-                        <span class="required">Required</span>
-                        <input type="checkbox" class="required-toggle" />
-                    </label>
-                </div>
-            </div>
-            <!-- Dropdown question card -->
-            <div role="group" aria-label="dropdown-question" class="questions-card">
-                <div class="question-header">
-                    <input type="text" class="question-input label-large" placeholder="Question" />
-                    <label class="material-symbols-outlined upload-icon">image
-                        <input type="file" class="image-upload" class="file-input" hidden />
-                    </label>
-
-                    <div class="custom-select">
-                        <div class="select-button">
-                            <div class="selected-option">
-                                <span class="material-symbols-outlined">arrow_drop_down_circle</span> Dropdown
-                            </div>
-                            <span class="material-symbols-outlined">arrow_drop_down</span>
-                        </div>
-                        <div class="options-type"></div>
-                    </div>
-                </div>
-
-                <ol class="question-options">
-                    <li class="option">
-                        <span class="option-label">1.</span>
-                        <input type="text" class="option-input label-medium" value="Option 1" />
-                        <button type="button" class="material-symbols-outlined icon-button"
-                            aria-label="Remove Option">close</button>
-                    </li>
-                    <li class="option">
-                        <span class="option-label">2.</span>
-                        <input type="text" class="option-input label-medium" value="Option 2" />
-                        <button type="button" class="material-symbols-outlined icon-button"
-                            aria-label="Remove Option">close</button>
-                    </li>
-                    <li class="option add-option-button">
-                        <span class="option-label">3.</span>
-                        <button type="button" class="add-option-button label-small">Add option</button>
-                    </li>
-                </ol>
-
-                <div class="question-actions">
-                    <button type="button" class="material-symbols-outlined icon-button">content_copy</button>
-                    <button type="button" class="material-symbols-outlined icon-button">delete</button>
-                    <div class="hor-line"></div>
-                    <label aria-label="required-option" class="required-option">
-                        <span class="required">Required</span>
-                        <input type="checkbox" class="required-toggle" />
-                    </label>
-                </div>
-            </div>
-            <!-- Multiple choice grid question card -->
-            <div role="group" aria-label="mcq-grid-question" class="questions-card">
-                <div class="question-header">
-                    <input type="text" class="question-input label-large" placeholder="Question" />
-                    <label class="material-symbols-outlined upload-icon">image
-                        <input type="file" class="image-upload" class="file-input" hidden />
-                    </label>
-
-                    <div class="custom-select">
-                        <div class="select-button">
-                            <div class="selected-option">
-                                <span class="material-symbols-outlined">apps</span> Multiple choice grid
-                            </div>
-                            <span class="material-symbols-outlined">arrow_drop_down</span>
-                        </div>
-                        <div class="options-type"></div>
-                    </div>
-                </div>
-
-                <div class="grid-container">
-                    <div class="grid-rows">
-                        <span class="row-heading">Rows</span>
-                        <div class="option">
-                            <span class="option-label">1.</span>
-                            <input type="text" class="option-input label-medium" value="Row 1" />
-                            <button type="button" class="material-symbols-outlined icon-button"
-                                aria-label="Remove Option">close</button>
-                        </div>
-                        <div class="option">
-                            <span class="option-label">2.</span>
-                            <input type="text" class="option-input label-medium" value="Row 2" />
-                            <button type="button" class="material-symbols-outlined icon-button"
-                                aria-label="Remove Option">close</button>
-                        </div>
-                        <div class="option add-option-button">
-                            <span class="option-label">3.</span>
-                            <button type="button" class="add-option-button label-small">Add option</button>
-
-                        </div>
-                    </div>
-
-                    <div class="grid-columns">
-                        <span class="column-heading">Columns</span>
-                        <div class="option">
-                            <input type="radio" disabled />
-                            <input type="text" class="option-input label-medium" value="Column 1" />
-                            <button type="button" class="material-symbols-outlined icon-button"
-                                aria-label="Remove Option">close</button>
-                        </div>
-                        <div class="option">
-                            <input type="radio" disabled />
-                            <input type="text" class="option-input label-medium" value="Column 2" />
-                            <button type="button" class="material-symbols-outlined icon-button"
-                                aria-label="Remove Option">close</button>
-                        </div>
-                        <div class="option add-option-button">
-                            <input type="radio" name="mcq" disabled />
-                            <button type="button" class="add-option-button label-small">Add option</button>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="question-actions">
-                    <button type="button" class="material-symbols-outlined icon-button">content_copy</button>
-                    <button type="button" class="material-symbols-outlined icon-button">delete</button>
-                    <div class="hor-line"></div>
-                    <label aria-label="required-option" class="required-option">
-                        <span class="required">Required</span>
-                        <input type="checkbox" class="required-toggle" />
-                    </label>
-                </div>
-            </div>
-            <!-- date type question card -->
-            <div role="group" aria-label="date-question" class="questions-card">
-                <div class="question-header">
-                    <input type="text" class="question-input label-large" placeholder="Question" />
-                    <label class="material-symbols-outlined upload-icon">image
-                        <input type="file" class="image-upload" class="file-input" hidden />
-                    </label>
-
-                    <div class="custom-select">
-                        <div class="select-button">
-                            <div class="selected-option">
-                                <span class="material-symbols-outlined">event</span> Date
-                            </div>
-                            <span class="material-symbols-outlined">arrow_drop_down</span>
-                        </div>
-                        <div class="options-type"></div>
-                    </div>
-                </div>
-                <div class="question-options">
-                    <label class="input-date">
-                        Month, day, year
-                        <span class="material-symbols-outlined">event</span>
-                        <input type="date" disabled hidden />
-                    </label>
-                </div>
-                <div class="question-actions">
-                    <button type="button" class="material-symbols-outlined icon-button">content_copy</button>
-                    <button type="button" class="material-symbols-outlined icon-button">delete</button>
-                    <div class="hor-line"></div>
-                    <label aria-label="required-option" class="required-option">
-                        <span class="required">Required</span>
-                        <input type="checkbox" class="required-toggle" />
-                    </label>
-                </div>
-            </div>
-            <!-- time type question card -->
-            <div role="group" aria-label="time-question" class="questions-card">
-                <div class="question-header">
-                    <input type="text" class="question-input label-large" placeholder="Question" />
-                    <label class="material-symbols-outlined upload-icon">image
-                        <input type="file" class="image-upload" class="file-input" hidden />
-                    </label>
-
-                    <div class="custom-select">
-                        <div class="select-button">
-                            <div class="selected-option">
-                                <span class="material-symbols-outlined">access_time</span> Time
-                            </div>
-                            <span class="material-symbols-outlined">arrow_drop_down</span>
-                        </div>
-                        <div class="options-type"></div>
-                    </div>
-                </div>
-                <div class="question-options">
-                    <label class="input-time">
-                        Time
-                        <span class="material-symbols-outlined">access_time</span>
-                        <input type="time" disabled hidden />
-                    </label>
-                </div>
-                <div class="question-actions">
-                    <button type="button" class="material-symbols-outlined icon-button">content_copy</button>
-                    <button type="button" class="material-symbols-outlined icon-button">delete</button>
-                    <div class="hor-line"></div>
-                    <label aria-label="required-option" class="required-option">
-                        <span class="required">Required</span>
-                        <input type="checkbox" class="required-toggle" />
-                    </label>
-                </div>
-            </div>
-            <!-- linear scale question card -->
-            <div role="group" aria-label="linear-scale-question" class="questions-card">
-                <div class="question-header">
-                    <input type="text" class="question-input label-large" placeholder="Question" />
-                    <label class="material-symbols-outlined upload-icon">image
-                        <input type="file" class="image-upload" class="file-input" hidden />
-                    </label>
-                    <div class="custom-select">
-                        <div class="select-button">
-                            <div class="selected-option">
-                                <span class="material-symbols-outlined">linear_scale</span> Linear scale
-                            </div>
-                            <span class="material-symbols-outlined">arrow_drop_down</span>
-                        </div>
-                        <div class="options-type"></div>
-                    </div>
-                </div>
-                <div class="linear-scale-question-option">
-                    <select class="range-dropdown">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                    </select>
-                    <span>to</span>
-                    <select class="range-dropdown">
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>
-                </div>
-                <div class="question-actions">
-                    <button type="button" class="material-symbols-outlined icon-button">content_copy</button>
-                    <button type="button" class="material-symbols-outlined icon-button">delete</button>
-                    <div class="hor-line"></div>
-                    <label aria-label="required-option" class="required-option">
-                        <span class="required">Required</span>
-                        <input type="checkbox" class="required-toggle" />
-                    </label>
-                </div>
-            </div>
-            <!-- rating question card -->
-            <div role="group" aria-label="rating-question" class="questions-card">
-                <div class="question-header">
-                    <input type="text" class="question-input label-large" placeholder="Question" />
-                    <label class="material-symbols-outlined upload-icon">image
-                        <input type="file" class="image-upload" class="file-input" hidden />
-                    </label>
-
-                    <div class="custom-select">
-                        <div class="select-button">
-                            <div class="selected-option">
-                                <span class="material-symbols-outlined">star</span> Rating
-                            </div>
-                            <span class="material-symbols-outlined">arrow_drop_down</span>
-
-                        </div>
-                        <div class="options-type"></div>
-                    </div>
-                </div>
-                <div class="linear-scale-question-option">
-                    <select class="range-dropdown">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                    <select class="range-dropdown">
-
-                    </select>
-                </div>
-                <div class="rating-container">
-                    <div class="rating-item">
-                    </div>
-                    <div class="rating-item">
-                        <span>1</span>
-                        <label class="material-symbols-outlined star-icon">star
-                            <input type="radio" hidden disabled>
-                        </label>
-                    </div>
-                    <div class="rating-item">
-                        <span>2</span>
-                        <label class="material-symbols-outlined star-icon">star
-                            <input type="radio" hidden disabled>
-                        </label>
-                    </div>
-                    <div class="rating-item">
-                        <span>3</span>
-                        <label class="material-symbols-outlined star-icon">star
-                            <input type="radio" hidden disabled>
-                        </label>
-                    </div>
-                    <div class="rating-item">
-                        <span>4</span>
-                        <label class="material-symbols-outlined star-icon">star
-                            <input type="radio" hidden disabled>
-                        </label>
-                    </div>
-                    <div class="rating-item">
-                        <span>5</span>
-                        <label class="material-symbols-outlined star-icon">star
-                            <input type="radio" hidden disabled>
-                        </label>
-                    </div>
-                    <div class="rating-item">
-                    </div>
-                </div>
-                <div class="question-actions">
-                    <button type="button" class="material-symbols-outlined icon-button">content_copy</button>
-                    <button type="button" class="material-symbols-outlined icon-button">delete</button>
-                    <div class="hor-line"></div>
-                    <label aria-label="required-option" class="required-option">
-                        <span class="required">Required</span>
-                        <input type="checkbox" class="required-toggle" />
-                    </label>
-                </div>
-            </div>
+            <button type="button" id="add-question-button">
+                Add Question
+            </button>
         </form>
     </main>
+    <script src="script.js"></script>
 </body>
 
 </html>

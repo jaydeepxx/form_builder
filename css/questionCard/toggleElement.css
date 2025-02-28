@@ -1,7 +1,7 @@
 .required-toggle {
     appearance: none;
-    width: 32px;
-    height: 12px;
+    width: 32px !important;
+    height: 12px !important;
     background: grey;
     border-radius: 20px;
     cursor: pointer;
