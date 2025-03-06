@@ -1,6 +1,7 @@
-import FormModel from './Model.js';
-import FormView from './View.js';
-import FormController from './Controller.js';
+// Application initialization
+import FormModel from './core/Model.js';
+import FormView from './core/View.js';
+import FormController from './core/Controller.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const model = new FormModel();

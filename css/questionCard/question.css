@@ -14,7 +14,6 @@
     margin: 10px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     gap: 10px;
-    transition: opacity 0.2s ease-in-out;
 }
 
 .question-actions {
@@ -50,6 +49,10 @@
     border: 2px dashed #007bff;
 }
 
+.questions-card {
+    transition: opacity 0.2s ease-in-out;
+}
+
 .drag-handle {
     position: absolute;
     top: -16px;
@@ -79,11 +82,16 @@
 }
 
 .questions-card.dragging {
+    cursor: grabbing !important;
     opacity: 0.7;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
+
+.questions-card {
+    position: relative;
+  }
   
-.hover-actions {
+  .hover-actions {
     position: absolute;
     bottom: -20px;
     left: 50%;
@@ -93,9 +101,9 @@
     gap: 8px;
   }
   
-.questions-card:hover .hover-actions {
+  .questions-card:hover .hover-actions {
     display: flex;
-}
+  }
   
   .hover-button {
     width: 30px;
