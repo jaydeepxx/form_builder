@@ -1,0 +1,56 @@
+.custom-select {
+    position: relative;
+    width: 225px;
+}
+
+.select-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.select-button .selected-option {
+    font-family: roboto;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+.select-button .selected-option .material-symbols-outlined {
+    margin-right: 10px;
+    color: #5f6368;
+}
+
+.options-type {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    display: none;
+    margin-top: 2px;
+    padding: 0;
+    border-radius: 5px;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.option-type {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.option-type:hover {
+    background: #f0f0f0;
+}
+
